@@ -108,7 +108,7 @@ describe("CORE19-07_quiz_mvc_server", function () {
     });
 
     it('', async function () {
-        this.name = `4: Checking 'Edit' implementation...`;
+        this.name = `5: Checking 'Edit' implementation...`;
         this.score = 3;
         if (error_critical) {
             this.msg_err = error_critical;
@@ -146,7 +146,7 @@ describe("CORE19-07_quiz_mvc_server", function () {
     });
 
     it('', async function () {
-        this.name = `5: Checking 'Delete' implementation...`;
+        this.name = `6: Checking 'Delete' implementation...`;
         this.score = 3;
         if (error_critical) {
             this.msg_err = error_critical;
@@ -166,7 +166,7 @@ describe("CORE19-07_quiz_mvc_server", function () {
     });
 
     it('', async function () {
-        this.name = `6: Checking 'Play' implementation...`;
+        this.name = `7: Checking 'Play' implementation...`;
         this.score = 3;
         if (error_critical) {
             this.msg_err = error_critical;
