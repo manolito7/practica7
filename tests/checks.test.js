@@ -182,7 +182,7 @@ describe("CORE19-07_quiz_mvc_server", function () {
             if (error_nav) {
                 this.msg_err = `Couldn't find '${expected}' in ${URL}\n\t\t\tError: >>${error_nav}<<\n\t\t\tReceived: >>${browser.html('body')}<<`;
             }
-            [error_nav, resp] = await to(browser.fill('input[name=response]', "Answer Number 1"));
+            [error_nav, resp] = await to(browser.fill('input[name=response]', "OK"));
             if (error_nav) {
                 this.msg_err = `Couldn't find '${expected}' in ${URL}\n\t\t\tError: >>${error_nav}<<\n\t\t\tReceived: >>${browser.html('body')}<<`;
             }
