@@ -53,16 +53,15 @@ describe("CORE19-07_quiz_mvc_server", function () {
             this.msg_err = error_critical;
             should.not.exist(error_critical);
         } else {
-            this.msg_ok = "Dependencies installed successfully";
-            // replace answers file
+            this.msg_ok = "'quizzes.sqlite' replaced successfully";
+            this.msg_err = "Error replacing 'quizzes.sqlite'";
             let error_deps;
             try {fs.copySync(quizzes_orig, quizzes_back, {"overwrite": true});} catch (e){}
-            try {fs.copySync(quizzes_test, quizzes_orig, {"overwrite": true});} catch (e){}
+            [error_deps, _] = await to(fs.copy(quizzes_test, quizzes_orig, {"overwrite": true}));
             if (error_deps) {
                 this.msg_err = "Error copying the answers file: " + error_deps;
-                error_critical = this.msg_err;
             }
-            should.not.exist(error_critical);
+            should.not.exist(error_deps);
         }
     });
 
