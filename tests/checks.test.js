@@ -113,13 +113,13 @@ describe("CORE19-07_quiz_mvc_server", function () {
             this.msg_err = error_critical;
             should.not.exist(error_critical);
         } else {
-            const expected = "Question 1";
+            const expected = "Question 2";
             let error_nav;
             [error_nav, resp] = await to(browser.visit(URL));
             if (error_nav) {
                 this.msg_err = `Couldn't find '${expected}' in ${URL}\n\t\t\tError: >>${error_nav}<<\n\t\t\tReceived: >>${browser.html('body')}<<`;
             }
-            [error_nav, resp] = await to(browser.click('a[href="/quizzes/1/edit"]'));
+            [error_nav, resp] = await to(browser.click('a[href="/quizzes/2/edit"]'));
             if (error_nav) {
                 this.msg_err = `Couldn't find '${expected}' in ${URL}\n\t\t\tError: >>${error_nav}<<\n\t\t\tReceived: >>${browser.html('body')}<<`;
             }
@@ -127,7 +127,7 @@ describe("CORE19-07_quiz_mvc_server", function () {
             if (error_nav) {
                 this.msg_err = `Couldn't find '${expected}' in ${URL}\n\t\t\tError: >>${error_nav}<<\n\t\t\tReceived: >>${browser.html('body')}<<`;
             }
-            [error_nav, resp] = await to(browser.fill('input[name="answer"]', "Answer 1"));
+            [error_nav, resp] = await to(browser.fill('input[name="answer"]', "Answer 2"));
             if (error_nav) {
                 this.msg_err = `Couldn't find '${expected}' in ${URL}\n\t\t\tError: >>${error_nav}<<\n\t\t\tReceived: >>${browser.html('body')}<<`;
             }
